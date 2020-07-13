@@ -11,7 +11,19 @@
 
 static char buffer[2048];
 
-//made up readline funnction
+//declaring new lval struct.
+typedef struct {
+  int type; //represented by a single integer value
+  long num;
+  int err; //represented by a single integer value
+} lval;
+/*enum is a user defined data type in C used to assign names
+  to integral constants (in this case, we use it in order to
+  tell apart 0 = the structure is a number and 1 = the
+  structure is an error)*/
+enum { LVAL_NUM, LVAL_ERR};
+
+//made up readline funnction.
 char* readline(char* prompt) {
     fputs(prompt, stdout);
     fgets(buffer, 2048, stdin);
