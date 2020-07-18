@@ -1,0 +1,2 @@
+lisp: lisp.c
+	$(CC) lisp.c -o lisp -Wall -Wextra -pedantic -std=c99
